@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Happy Birthday! 🎉</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -19,8 +19,9 @@
   /* Complete envelope redesign for realistic look */
   #envelope {
     position: relative;
-    width: 500px;
-    height: 320px;
+    width: 90px;
+    max-width: 500px;
+    aspect-ratio: 500 / 320;
     cursor: pointer;
     perspective: 1000px;
     z-index: 10000;
@@ -323,8 +324,8 @@
   /* Continuous floating picture animation - always visible during celebration */
   .floating-pic {
     position: fixed;
-    width: 140px;
-    height: 140px;
+    width: clamp(60px, 12vw, 140px);
+    height: auto;
     border-radius: 12px;
     object-fit: cover;
     pointer-events: none;
@@ -380,6 +381,31 @@
     .lyrics-display { font-size: 16px; }
     .floating-pic { width: 100px; height: 100px; }
   }
+
+  @media (max-width: 600px) {
+   body {
+     padding: 10px;
+   }
+  }
+
+
+  @media (max-width: 600px) {
+   .envelope {
+     width: 90%;
+     height: auto;
+   }
+   .greeting {
+     font-size: 32px;
+   }
+   .lyrics-display {
+     font-size: 16px;
+   }
+   #celebrateBtn {
+     padding: 12px 28px;
+     font-size: 16px;
+   }
+  }
+
 </style>
 </head>
 <body>
